@@ -3,6 +3,7 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import Notification from 'shared/components/Notification/Notification';
+import styles from './Feedback.module.scss';
 
 const OPTIONS_BUTTON = [
   {
@@ -55,7 +56,7 @@ export class FeedBack extends Component {
     const total = this.countTotalFeedback();
 
     return (
-      <div>
+      <div className={styles.feedback}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={OPTIONS_BUTTON}
