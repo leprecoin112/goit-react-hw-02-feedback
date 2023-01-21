@@ -56,7 +56,7 @@ export class FeedBack extends Component {
     const total = this.countTotalFeedback();
 
     return (
-      <div className={styles.feedback}>
+      <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={OPTIONS_BUTTON}

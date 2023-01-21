@@ -1,24 +1,22 @@
 import React from 'react';
 import Button from 'shared/components/Button/Button';
 import PropTypes from 'prop-types';
+import styles from './FeedbackOptions.module.scss';
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <div>
+    <ul className={styles.feedbackOptions}>
       {options.map(({ type, title }) => (
-        <Button
-          key={title}
-          onClick={onLeaveFeedback}
-          type={type}
-          title={title}
-        />
+        <li key={title}>
+          <Button onClick={onLeaveFeedback} type={type} title={title} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object,
+  options: PropTypes.arrayOf(PropTypes.object),
   onLeaveFeedback: PropTypes.func,
 };
 
